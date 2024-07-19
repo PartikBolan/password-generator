@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    user-select: none;
+    font-family:  monospace;
+    color: white;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("background.png");
+}
+.main-heading{
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+.sub-heading{
+    font-size: 1.5rem;
+}
+.main-container{
+    padding: 2%;
+    width: 30%;
+    overflow: hidden;
+    margin-top: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 1rem ;
+}
+.checkbox-container {
+    display: inline-block;
+    width: 100%;
+    margin-top: 1rem;
+}
+.checkbox-container input[type="checkbox"],
+.checkbox-container label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 10px; 
+    font-size: 1.2rem;
+    text-align: left;
+    font-family: cursive;
+}
+
+input[type="checkbox"]{
+   width: 16px;
+   height: 16px;
+   accent-color: rgb(16, 242, 16);
+}  
+input[type="checkbox"]:hover{
+    filter: drop-shadow(1px 1px 2px white);
+}
+
+.checkbox-container label{
+    width: 70%;
+    height: 20px;
+    margin-left: .4rem;
+}
+#length{
+    width: 50%;   
+    margin-top: 1.5rem;
+    height: 2.4rem;
+    border-radius: 50px;
+    border: 1px solid white;
+    background-color: transparent;
+    transition: all .7s ease;
+}
+#length::placeholder{
+    font-size: .7rem;
+    color: white;
+}
+#length:focus{
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: -1px 1px 1px rgb(16, 242, 16);
+}
+
+#generate{
+    margin-top: 1rem;
+    padding: .5rem;
+    background-color: rgb(16, 242, 16);
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    border-radius: .7rem;
+   transition: all .3s ease;
+}
+#generate:hover{
+   background-color: rgb(49, 33, 223);
+   box-shadow: 2px 3px 5px black;
+}
+#show-password{
+    margin-top: 1rem;
+    width: 100%;
+    overflow-wrap: break-word; 
+    word-break: break-all; 
+    white-space: normal;
+    transition:all .4s ease;
+}
