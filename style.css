@@ -78,27 +78,34 @@ input[type="checkbox"]:hover{
     box-shadow: -1px 1px 1px rgb(16, 242, 16);
 }
 
-#generate{
+#generate, #copy{
     margin-top: 1rem;
     padding: .5rem;
     background-color: rgb(16, 242, 16);
     color: white;
-    font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1rem;
     outline: none;
     border: none;
     border-radius: .7rem;
-   transition: all .3s ease;
+   transition: all .5s ease;
 }
-#generate:hover{
+#generate:hover, #copy:hover{
    background-color: rgb(49, 33, 223);
    box-shadow: 2px 3px 5px black;
 }
 #show-password{
     margin-top: 1rem;
-    width: 100%;
+    width: auto;
     overflow-wrap: break-word; 
     word-break: break-all; 
     white-space: normal;
     transition:all .4s ease;
+    display: inline-block;
+}
+.hidden{
+    display: none;
+}
+.visible{
+    margin-left: .5rem;
+    display: initial;
 }
