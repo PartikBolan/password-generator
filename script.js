@@ -66,12 +66,28 @@ const generatePassword = () => {
     }
 }
 
-const copyPassowrdToClipboard = () => {
+const copyPasswordToClipboard = () => {
     const password = document.getElementById("show-password").innerText;
-    navigator.clipboard.writeText(password)
-    copyPassword.classList.remove('visible');
-    copyPassword.classList.add('hidden');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(password).then(() => {
+            copyPassword.classList.remove('visible');
+            copyPassword.classList.add('hidden');
+        })
+    } else {
+        const textArea = document.createElement("textarea");
+        textArea.value = password;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand("copy");
+            copyPassword.classList.remove('visible');
+            copyPassword.classList.add('hidden');
+
+        } finally {
+            textArea.remove();
+        }
+    }
 }
 
 generate.addEventListener('click', generatePassword);
-copyPassword.addEventListener('click',copyPassowrdToClipboard);
+copyPassword.addEventListener('click', copyPasswordToClipboard);
